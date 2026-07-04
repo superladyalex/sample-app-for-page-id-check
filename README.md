@@ -104,6 +104,33 @@ Expected result:
 ❌ Duplicate data-testid detected
 ```
 
+
+
+## Attribute Namespace Isolation
+
+Identical values may appear across different attributes without being considered duplicates.
+
+Example:
+
+- `id="shared-value"`
+- `data-testid="shared-value"`
+
+These values are allowed to coexist because they belong to separate attribute namespaces.
+
+Expected analyzer behavior:
+
+- `id` values are only compared against other `id` values
+- `data-testid` values are only compared against other `data-testid` values
+- Cross-attribute value matches must be ignored
+
+This ensures duplicate detection is attribute-scoped rather than value-global.
+
+Expected result:
+
+```
+✅ No issues
+```
+
 ---
 
 # Components
@@ -154,7 +181,7 @@ This repository currently exercises:
 - configurable duplicate attribute detection
 - page-scoped validation
 - exclusion rules
-
+- identical values can exist as long as the keys are not the same (id and data-testid can share the same value)
 ---
 
 # Using This Repository
