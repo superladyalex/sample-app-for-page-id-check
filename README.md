@@ -131,6 +131,25 @@ Expected result:
 ✅ No issues
 ```
 
+
+## Attribute values containing special characters
+
+Page: UserProfileColonValuePage.tsx
+
+The analyzer must correctly handle attribute values that include special characters such as ":".
+
+Example:
+
+```tsx
+<div data-testid="user:profile" />
+````
+
+Expected result:
+
+```
+✅ No issues
+```
+
 ---
 
 # Components
