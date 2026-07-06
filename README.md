@@ -6,6 +6,8 @@ Its purpose is to provide a small, deterministic application that exercises ever
 
 Rather than being a realistic application, each page and component has been intentionally designed to demonstrate a specific analysis scenario.
 
+Pleae do not attempt to run this in a browser
+
 ---
 
 # Repository Purpose
